@@ -9,6 +9,8 @@ import {
   getCategories as getCategoriesApi,
   getUpCommingEvent as getUpCommingEventApi
 } from "../../helpers/backend_helper";
+import { log } from "console";
+import { co } from "@fullcalendar/core/internal-common";
 
 export const getEvents = createAsyncThunk("calendar/getEvents", async () => {
   try {
@@ -38,9 +40,7 @@ export const updateEvent = createAsyncThunk("calendar/updateEvent", async (event
   }
 });
 
-export const deleteEvent = createAsyncThunk("calendar/deleteEvent", async (event:any) => {
-  console.log("event delete",event);
-  
+export const deleteEvent = createAsyncThunk("calendar/deleteEvent", async (event:any) => { 
   try {
     const response = deleteEventApi(event);
     return response;

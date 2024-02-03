@@ -62,13 +62,17 @@ class APIClient {
       });
 
       const queryString = paramKeys && paramKeys.length ? paramKeys.join('&') : "";
-      response = axios.get(`${url}?${queryString}`, params);
+      response = axios.get(`${url}?${queryString}`, {params , timeout: 1000000});
     } else {
-      response = axios.get(`${url}`, params);
+      response = axios.get(`${url}`, { timeout: 1000000});
     }
 
     return response;
   };
+
+  // get = (url: string, params?: any): Promise<AxiosResponse> => {
+  //   return axios.get(url, { params, timeout: 1000000 });
+  // };
 
   /**
    * Posts the given data to the URL

@@ -155,9 +155,9 @@ const Calender = () => {
                 ? str_dt(st_date)
                 : str_dt(st_date) + " to " + str_dt(ed_date);
         const er_date = ed_date === null ? [st_date] : [st_date, ed_date];
-
+        // console.log(event._def.extendedProps._id);
         setEvent({
-            id: event.id,
+            id: event._def.extendedProps._id,
             title: event.title,
             start: event.start,
             end: event.end,
@@ -169,7 +169,7 @@ const Calender = () => {
             datetag: r_date,
         });
         setEventName(event.title)
-        setDeleteEvent(event.id);
+        setDeleteEvent(event._def.extendedProps._id);
         setIsEdit(true);
         setIsEditButton(false);
         toggle();
@@ -178,8 +178,13 @@ const Calender = () => {
      * On delete event
      */
     const handleDeleteEvent = () => {
-        dispatch(onDeleteEvent(deleteEvent));
-        setDeleteModal(false);
+        if (deleteEvent === "") {
+            return;
+        }
+        dispatch(onDeleteEvent(deleteEvent)).then(() => {
+            setDeleteModal(false);
+            dispatch(onGetEvents());
+        });
     };
 
     // events validation
@@ -226,7 +231,10 @@ const Calender = () => {
                     description: values.description,
                 };
                 // update event
-                dispatch(onUpdateEvent(updateEvent));
+                dispatch(onUpdateEvent(updateEvent)).then(() => {
+                    dispatch(onGetEvents());
+                });
+
                 validation.resetForm();
             } else {
                 const newEvent = {

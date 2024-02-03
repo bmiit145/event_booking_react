@@ -29,23 +29,25 @@ const calendarSlice = createSlice({
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(updateEvent.fulfilled, (state: any, action: any) => {
-      state.events = (state.events || []).map((event: any) =>
-        event.id.toString() === action.payload.id.toString()
-          ? { ...event, ...action.payload }
-          : event
-      );
-    });
+    // builder.addCase(updateEvent.fulfilled, (state: any, action: any) => {
+    //   console.log(action.payload.updatedEvent._id);
+    //   console.log(state.events);
+    //   state.events = (state.events || []).map((event: any) =>
+    //   event.id.toString() === action.payload.updatedEvent._id.toString()
+    //       ? { ...event, ...action.payload }
+    //       : event
+    //   );
+    // });
 
     builder.addCase(updateEvent.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(deleteEvent.fulfilled, (state: any, action: any) => {
-      state.events = state.events.filter(
-        (event: any) => event.id.toString() !== action.payload.toString()
-      );
-    });
+    // builder.addCase(deleteEvent.fulfilled, (state: any, action: any) => {
+    //   state.events = state.events.filter(
+    //     (event: any) => event.id.toString() !== action.payload.toString()
+    //   );
+    // });
     builder.addCase(deleteEvent.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });

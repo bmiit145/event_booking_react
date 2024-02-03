@@ -4,6 +4,8 @@ import { APIClient } from "./api_helper";
 import * as url from "./url_helper";
 
 const api = new APIClient();
+//const api_url = "https://satnam-backend.vercel.app/event/"
+const api_url = "http://localhost:4001/event/"
 
 // Gets the logged in user data from local session
 export const getLoggedInUser = () => {
@@ -68,7 +70,8 @@ export const postSocialLogin = (data : any) => api.create(url.SOCIAL_LOGIN, data
 // Calendar
 // get Events
 // export const getEvents = () => api.get(url.GET_EVENTS);
-export const getEvents = () => api.get("https://satnam-backend.vercel.app/event/events");
+export const getEvents = () => api.get(api_url + "/events");
+//export const getEvents = () => api.get("https://satnam-backend.vercel.app/event/events");
 
 
 // get Events
@@ -76,15 +79,22 @@ export const getCategories = () => api.get(url.GET_CATEGORIES);
 
 // get Upcomming Events
 // export const getUpCommingEvent = () => api.get(url.GET_UPCOMMINGEVENT);
-//export const getUpCommingEvent = () => api.get('http://localhost:4001/event/upcommingevents');
-export const getUpCommingEvent = () => api.get("https://satnam-backend.vercel.app/event/upcommingevents");
+export const getUpCommingEvent = () => api.get(api_url + '/upcommingevents');
+//export const getUpCommingEvent = () => api.get("https://satnam-backend.vercel.app/event/upcommingevents");
 
 // add Events
-export const addNewEvent = (event : any) => api.create(url.ADD_NEW_EVENT, event);
+//export const addNewEvent = (event : any) => api.create(url.ADD_NEW_EVENT, event);
+export const addNewEvent = (event : any) => api.create(api_url + '/add', event).then((response) => {
+  console.log(response);
+}).catch((error) => {
+  console.log(error);
+});
+//export const addNewEvent = (event : any) => api.create('https://satnam-backend.vercel.app/event/add', event);
 
 // update Event
-export const updateEvent = (event : any) => api.put(url.UPDATE_EVENT, event);
+// export const updateEvent = (event : any) => api.put(url.UPDATE_EVENT, event);
+export const updateEvent = (event : any) => api.put(api_url + '/update', event);
 
 // delete Event
-export const deleteEvent = (event : any) => api.delete(url.DELETE_EVENT, { headers: { event } });
+export const deleteEvent = (event : any) => api.delete(api_url + '/delete', { headers: { event } , data: { id : event } });
 
