@@ -39,6 +39,7 @@ import DeleteModal from "../../../Components/Common/DeleteModal";
 import SimpleBar from "simplebar-react";
 import UpcommingEvents from './UpcommingEvents';
 import listPlugin from '@fullcalendar/list';
+import axios from "axios";
 
 import {
     getEvents as onGetEvents,
@@ -48,6 +49,8 @@ import {
     updateEvent as onUpdateEvent,
     getUpCommingEvent as onGetUpCommingEvent,
 } from "../../../slices/thunks";
+
+
 import { createSelector } from "reselect";
 
 const Calender = () => {
@@ -79,9 +82,9 @@ const Calender = () => {
         dispatch(onGetEvents());
         dispatch(onGetCategories());
         dispatch(onGetUpCommingEvent());
-        new Draggable(document.getElementById("external-events") as HTMLElement, {
-            itemSelector: ".external-event",
-        });
+        // new Draggable(document.getElementById("external-events") as HTMLElement, {
+        //     itemSelector: ".external-event",
+        // });
     }, [dispatch]);
 
     useEffect(() => {
@@ -316,7 +319,7 @@ const Calender = () => {
         }
     };
 
-    document.title = "Calendar | Velzon - React Admin & Dashboard Template";
+    document.title = "Event List | Satnam decor and event";
     return (
         <React.Fragment>
             <DeleteModal
@@ -331,7 +334,7 @@ const Calender = () => {
                             <Row>
                                 <Col xl={3}>
                                     <Card className="card-h-100">
-                                        <CardBody>
+                                        {/*<CardBody>*/}
                                             <button
                                                 className="btn btn-primary w-100"
                                                 id="btn-new-event"
@@ -340,27 +343,27 @@ const Calender = () => {
                                                 <i className="mdi mdi-plus"></i> Create New Event
                                             </button>
 
-                                            <div id="external-events">
-                                                <br />
-                                                <p className="text-muted">
-                                                    Drag and drop your event or click in the calendar
-                                                </p>
-                                                {categories &&
-                                                    categories.map((category: any) => (
-                                                        <div
-                                                            className={`bg-${category.type}-subtle external-event fc-event text-${category.type}`}
-                                                            key={"cat-" + category.id}
-                                                            draggable
-                                                            onDrag={(event: any) => {
-                                                                onDrag(event);
-                                                            }}
-                                                        >
-                                                            <i className="mdi mdi-checkbox-blank-circle font-size-11 me-2" />
-                                                            {category.title}
-                                                        </div>
-                                                    ))}
-                                            </div>
-                                        </CardBody>
+                                            {/*<div id="external-events">*/}
+                                            {/*    <br />*/}
+                                            {/*    <p className="text-muted">*/}
+                                            {/*        Drag and drop your event or click in the calendar*/}
+                                            {/*    </p>*/}
+                                            {/*    {categories &&*/}
+                                            {/*        categories.map((category: any) => (*/}
+                                            {/*            <div*/}
+                                            {/*                className={`bg-${category.type}-subtle external-event fc-event text-${category.type}`}*/}
+                                            {/*                key={"cat-" + category.id}*/}
+                                            {/*                draggable*/}
+                                            {/*                onDrag={(event: any) => {*/}
+                                            {/*                    onDrag(event);*/}
+                                            {/*                }}*/}
+                                            {/*            >*/}
+                                            {/*                <i className="mdi mdi-checkbox-blank-circle font-size-11 me-2" />*/}
+                                            {/*                {category.title}*/}
+                                            {/*            </div>*/}
+                                            {/*        ))}*/}
+                                            {/*</div>*/}
+                                        {/*</CardBody>*/}
                                     </Card>
                                     <div>
                                         <h5 className="mb-1">Upcoming Events</h5>
@@ -380,26 +383,26 @@ const Calender = () => {
                                         </SimpleBar>
                                     </div>
 
-                                    <Card>
-                                        <CardBody className="bg-info-subtle">
-                                            <div className="d-flex">
-                                                <div className="flex-shrink-0">
-                                                    <FeatherIcon
-                                                        icon="calendar"
-                                                        className="text-info icon-dual-info"
-                                                    />
-                                                </div>
-                                                <div className="flex-grow-1 ms-3">
-                                                    <h6 className="fs-15">Welcome to your Calendar!</h6>
-                                                    <p className="text-muted mb-0">
-                                                        Event that applications book will appear here. Click
-                                                        on an event to see the details and manage applicants
-                                                        event.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </CardBody>
-                                    </Card>
+                                    {/*<Card>*/}
+                                    {/*    <CardBody className="bg-info-subtle">*/}
+                                    {/*        <div className="d-flex">*/}
+                                    {/*            <div className="flex-shrink-0">*/}
+                                    {/*                <FeatherIcon*/}
+                                    {/*                    icon="calendar"*/}
+                                    {/*                    className="text-info icon-dual-info"*/}
+                                    {/*                />*/}
+                                    {/*            </div>*/}
+                                    {/*            <div className="flex-grow-1 ms-3">*/}
+                                    {/*                <h6 className="fs-15">Welcome to your Calendar!</h6>*/}
+                                    {/*                <p className="text-muted mb-0">*/}
+                                    {/*                    Event that applications book will appear here. Click*/}
+                                    {/*                    on an event to see the details and manage applicants*/}
+                                    {/*                    event.*/}
+                                    {/*                </p>*/}
+                                    {/*            </div>*/}
+                                    {/*        </div>*/}
+                                    {/*    </CardBody>*/}
+                                    {/*</Card>*/}
                                 </Col>
 
                                 <Col xl={9}>

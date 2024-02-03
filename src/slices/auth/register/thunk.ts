@@ -3,7 +3,7 @@ import { getFirebaseBackend } from "../../../helpers/firebase_helper";
 import {
   postFakeRegister,
   postJwtRegister,
-} from "../../../helpers/fakebackend_helper";
+} from "../../../helpers/backend_helper";
 
 // action
 import {
