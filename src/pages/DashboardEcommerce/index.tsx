@@ -3,7 +3,6 @@ import { Col, Container, Row } from "reactstrap";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
 import Widget from "./Widgets";
 import BestSellingProducts from "./BestSellingProducts";
-import RecentActivity from "./RecentActivity";
 import RecentOrders from "./RecentOrders";
 import Revenue from "./Revenue";
 import SalesByLocations from "./SalesByLocations";
@@ -12,12 +11,7 @@ import StoreVisits from "./StoreVisits";
 import TopSellers from "./TopSellers";
 
 const DashboardEcommerce = () => {
-  document.title = "Dashboard | Velzon - React Admin & Dashboard Template";
-
-  const [rightColumn, setRightColumn] = useState(true);
-  const toggleRightColumn = () => {
-    setRightColumn(!rightColumn);
-  };
+  document.title = "Dashboard | Event Booking ";
 
   return (
     <React.Fragment>
@@ -27,7 +21,7 @@ const DashboardEcommerce = () => {
           <Row>
             <Col>
               <div className="h-100">
-                <Section rightClickBtn={toggleRightColumn} />
+                <Section/>
                 <Row>
                   <Widget />
                 </Row>
@@ -47,8 +41,7 @@ const DashboardEcommerce = () => {
                 </Row>
               </div>
             </Col>
-            <RecentActivity rightColumn={rightColumn} hideRightColumn={toggleRightColumn} />
-          </Row>
+           </Row>
         </Container>
       </div>
     </React.Fragment>

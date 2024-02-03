@@ -1,9 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 //Dashboard
-import DashboardAnalytics from "../pages/DashboardAnalytics";
-import DashboardCrm from "../pages/DashboardCrm";
-import DashboardEcommerce from "../pages/DashboardEcommerce";
+import Dashboard from "../pages/Dashboard";
 
 
 
@@ -17,10 +15,10 @@ import Register from "../pages/Authentication/Register";
 import Calendar from "../pages/Calendar";
 
 const authProtectedRoutes = [
-  { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
-  { path: "/dashboard-crm", component: <DashboardCrm /> },
-  { path: "/dashboard", component: <DashboardEcommerce /> },
-  { path: "/index", component: <DashboardEcommerce /> },
+  { path: "/dashboard", component: <Dashboard /> },
+  { path: "/index", component: <Dashboard /> },
+    // Event
+
 
   { path: "/apps-calendar", component: <Calendar /> },
   // this route should be at the end of all other routes
