@@ -45,7 +45,7 @@ const calendarSlice = createSlice({
 
     // builder.addCase(deleteEvent.fulfilled, (state: any, action: any) => {
     //   state.events = state.events.filter(
-    //     (event: any) => event.id.toString() !== action.payload.toString()
+    //     (event: any) => event.id.toString() !== action.payload.id.toString()
     //   );
     // });
     builder.addCase(deleteEvent.rejected, (state: any, action: any) => {
