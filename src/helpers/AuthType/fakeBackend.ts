@@ -89,10 +89,10 @@ import {
 let users = [
   {
     uid: 1,
-    username: "admin",
+    username: "satnam",
     role: "admin",
-    password: "123456",
-    email: "admin@themesbrand.com",
+    password: "Satnam",
+    email: "admin@satnam.com",
   },
 ];
 

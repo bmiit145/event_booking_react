@@ -12,9 +12,11 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 // actions
+
 import { loginUser, socialLogin, resetLoginFlag } from "../../slices/thunks";
 
-import logoLight from "../../assets/images/logo-light.png";
+import logoLight from "../../assets/images/logo.png";
+
 import { createSelector } from 'reselect';
 //import images
 
@@ -54,8 +56,8 @@ const Login = (props: any) => {
         enableReinitialize: true,
 
         initialValues: {
-            email: userLogin.email || "admin@themesbrand.com" || '',
-            password: userLogin.password || "123456" || '',
+            email: userLogin.email || "admin@satnam.com" || '',
+            password: userLogin.password || '',
         },
         validationSchema: Yup.object({
             email: Yup.string().required("Please Enter Your Email"),
@@ -89,7 +91,7 @@ const Login = (props: any) => {
         }
     }, [dispatch, errorMsg]);
 
-    document.title = "Basic SignIn | Velzon - React Admin & Dashboard Template";
+    document.title = "Login | Satnam Decor & Event";
     return (
         <React.Fragment>
             <ParticlesAuth>
@@ -100,10 +102,10 @@ const Login = (props: any) => {
                                 <div className="text-center mt-sm-5 mb-4 text-white-50">
                                     <div>
                                         <Link to="/" className="d-inline-block auth-logo">
-                                            <img src={logoLight} alt="" height="20" />
+                                            <img src={logoLight} alt="" height="100" />
                                         </Link>
                                     </div>
-                                    <p className="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
+                                    <p className="mt-3 fs-15 fw-medium">Your Vision + Our Innovation = Event Solutions</p>
                                 </div>
                             </Col>
                         </Row>
@@ -114,7 +116,7 @@ const Login = (props: any) => {
                                     <CardBody className="p-4">
                                         <div className="text-center mt-2">
                                             <h5 className="text-primary">Welcome Back !</h5>
-                                            <p className="text-muted">Sign in to continue to Velzon.</p>
+                                            <p className="text-muted">Sign in to continue to Dashboard.</p>
                                         </div>
                                         {error && error ? (<Alert color="danger"> {error} </Alert>) : null}
                                         <div className="p-2 mt-4">
@@ -146,9 +148,9 @@ const Login = (props: any) => {
                                                 </div>
 
                                                 <div className="mb-3">
-                                                    <div className="float-end">
-                                                        <Link to="/forgot-password" className="text-muted">Forgot password?</Link>
-                                                    </div>
+                                                    {/*<div className="float-end">*/}
+                                                    {/*    <Link to="/forgot-password" className="text-muted">Forgot password?</Link>*/}
+                                                    {/*</div>*/}
                                                     <Label className="form-label" htmlFor="password-input">Password</Label>
                                                     <div className="position-relative auth-pass-inputgroup mb-3">
                                                         <Input
@@ -184,43 +186,43 @@ const Login = (props: any) => {
                                                     </Button>
                                                 </div>
 
-                                                <div className="mt-4 text-center">
-                                                    <div className="signin-other-title">
-                                                        <h5 className="fs-13 mb-4 title">Sign In with</h5>
-                                                    </div>
-                                                    <div>
-                                                        <Link
-                                                            to="#"
-                                                            className="btn btn-primary btn-icon me-1"
-                                                            onClick={e => {
-                                                                e.preventDefault();
-                                                                socialResponse("facebook");
-                                                            }}
-                                                        >
-                                                            <i className="ri-facebook-fill fs-16" />
-                                                        </Link>
-                                                        <Link
-                                                            to="#"
-                                                            className="btn btn-danger btn-icon me-1"
-                                                            onClick={e => {
-                                                                e.preventDefault();
-                                                                socialResponse("google");
-                                                            }}
-                                                        >
-                                                            <i className="ri-google-fill fs-16" />
-                                                        </Link>
-                                                        <Button color="dark" className="btn-icon"><i className="ri-github-fill fs-16"></i></Button>{" "}
-                                                        <Button color="info" className="btn-icon"><i className="ri-twitter-fill fs-16"></i></Button>
-                                                    </div>
-                                                </div>
+                                                {/*<div className="mt-4 text-center">*/}
+                                                {/*    <div className="signin-other-title">*/}
+                                                {/*        <h5 className="fs-13 mb-4 title">Sign In with</h5>*/}
+                                                {/*    </div>*/}
+                                                {/*    <div>*/}
+                                                {/*        <Link*/}
+                                                {/*            to="#"*/}
+                                                {/*            className="btn btn-primary btn-icon me-1"*/}
+                                                {/*            onClick={e => {*/}
+                                                {/*                e.preventDefault();*/}
+                                                {/*                socialResponse("facebook");*/}
+                                                {/*            }}*/}
+                                                {/*        >*/}
+                                                {/*            <i className="ri-facebook-fill fs-16" />*/}
+                                                {/*        </Link>*/}
+                                                {/*        <Link*/}
+                                                {/*            to="#"*/}
+                                                {/*            className="btn btn-danger btn-icon me-1"*/}
+                                                {/*            onClick={e => {*/}
+                                                {/*                e.preventDefault();*/}
+                                                {/*                socialResponse("google");*/}
+                                                {/*            }}*/}
+                                                {/*        >*/}
+                                                {/*            <i className="ri-google-fill fs-16" />*/}
+                                                {/*        </Link>*/}
+                                                {/*        <Button color="dark" className="btn-icon"><i className="ri-github-fill fs-16"></i></Button>{" "}*/}
+                                                {/*        <Button color="info" className="btn-icon"><i className="ri-twitter-fill fs-16"></i></Button>*/}
+                                                {/*    </div>*/}
+                                                {/*</div>*/}
                                             </Form>
                                         </div>
                                     </CardBody>
                                 </Card>
 
-                                <div className="mt-4 text-center">
-                                    <p className="mb-0">Don't have an account ? <Link to="/register" className="fw-semibold text-primary text-decoration-underline"> Signup </Link> </p>
-                                </div>
+                                {/*<div className="mt-4 text-center">*/}
+                                {/*    <p className="mb-0">Don't have an account ? <Link to="/register" className="fw-semibold text-primary text-decoration-underline"> Signup </Link> </p>*/}
+                                {/*</div>*/}
 
                             </Col>
                         </Row>

@@ -22,12 +22,12 @@ const calendarSlice = createSlice({
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(addNewEvent.fulfilled, (state: any, action: any) => {
-      state.events.push(action.payload);
-    });
-    builder.addCase(addNewEvent.rejected, (state: any, action: any) => {
-      state.error = action.payload.error || null;
-    });
+    // builder.addCase(addNewEvent.fulfilled, (state: any, action: any) => {
+    //   state.events.push(action.payload);
+    // });
+    // builder.addCase(addNewEvent.rejected, (state: any, action: any) => {
+    //   state.error = action.payload.error || null;
+    // });
 
     // builder.addCase(updateEvent.fulfilled, (state: any, action: any) => {
     //   console.log(action.payload.updatedEvent._id);

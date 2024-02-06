@@ -49,7 +49,7 @@ const Layout = (props: any) => {
         })
     );
     // Inside your component
-    const {
+    let {
         layoutType,
         leftSidebarType,
         layoutModeType,
@@ -77,6 +77,8 @@ const Layout = (props: any) => {
     /*
     layout settings
     */
+
+    layoutType = 'horizontal';
     useEffect(() => {
         if (
             layoutType ||
@@ -131,19 +133,20 @@ const Layout = (props: any) => {
         }
     }, [sidebarVisibilitytype, layoutType]);
 
+
     return (
         <React.Fragment>
             <div id="layout-wrapper">
                 <Header
                     headerClass={headerClass}
-                    layoutModeType={layoutModeType}
+                        layoutModeType={layoutModeType}
                     onChangeLayoutMode={onChangeLayoutMode} />
                 <Sidebar layoutType={layoutType} />
                 <div className="main-content">{props.children}
                     <Footer />
                 </div>
             </div>
-            <RightSidebar />
+            {/*<RightSidebar />*/}
         </React.Fragment>
 
     );
@@ -152,5 +155,6 @@ const Layout = (props: any) => {
 Layout.propTypes = {
     children: PropTypes.object,
 };
+
 
 export default withRouter(Layout);

@@ -81,19 +81,19 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }: any) => {
                             <div className="navbar-brand-box horizontal-logo">
                                 <Link to="/" className="logo logo-dark">
                                     <span className="logo-sm">
-                                        <img src={logoSm} alt="" height="22" />
+                                        <img src={logoSm} alt="" height="44" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={logoDark} alt="" height="17" />
+                                        <img src={logoDark} alt="" height="35" />
                                     </span>
                                 </Link>
 
                                 <Link to="/" className="logo logo-light">
                                     <span className="logo-sm">
-                                        <img src={logoSm} alt="" height="22" />
+                                        <img src={logoSm} alt="" height="44" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={logoLight} alt="" height="17" />
+                                        <img src={logoLight} alt="" height="34" />
                                     </span>
                                 </Link>
                             </div>
@@ -110,38 +110,37 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }: any) => {
                                 </span>
                             </button>
 
-
-                            <SearchOption />
+                            {/*<SearchOption />*/}
                         </div>
 
                         <div className="d-flex align-items-center">
 
-                            <Dropdown isOpen={search} toggle={toogleSearch} className="d-md-none topbar-head-dropdown header-item">
-                                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
-                                    <i className="bx bx-search fs-22"></i>
-                                </DropdownToggle>
-                                <DropdownMenu className="dropdown-menu-lg dropdown-menu-end p-0">
-                                    <Form className="p-3">
-                                        <div className="form-group m-0">
-                                            <div className="input-group">
-                                                <input type="text" className="form-control" placeholder="Search ..."
-                                                    aria-label="Recipient's username" />
-                                                <button className="btn btn-primary" type="submit"><i
-                                                    className="mdi mdi-magnify"></i></button>
-                                            </div>
-                                        </div>
-                                    </Form>
-                                </DropdownMenu>
-                            </Dropdown>
+                            {/*<Dropdown isOpen={search} toggle={toogleSearch} className="d-md-none topbar-head-dropdown header-item">*/}
+                            {/*    <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">*/}
+                            {/*        <i className="bx bx-search fs-22"></i>*/}
+                            {/*    </DropdownToggle>*/}
+                            {/*    <DropdownMenu className="dropdown-menu-lg dropdown-menu-end p-0">*/}
+                            {/*        <Form className="p-3">*/}
+                            {/*            <div className="form-group m-0">*/}
+                            {/*                <div className="input-group">*/}
+                            {/*                    <input type="text" className="form-control" placeholder="Search ..."*/}
+                            {/*                        aria-label="Recipient's username" />*/}
+                            {/*                    <button className="btn btn-primary" type="submit"><i*/}
+                            {/*                        className="mdi mdi-magnify"></i></button>*/}
+                            {/*                </div>*/}
+                            {/*            </div>*/}
+                            {/*        </Form>*/}
+                            {/*    </DropdownMenu>*/}
+                            {/*</Dropdown>*/}
 
                             {/* LanguageDropdown */}
-                            <LanguageDropdown />
+                            {/*<LanguageDropdown />*/}
 
                             {/* WebAppsDropdown */}
-                            <WebAppsDropdown />
+                            {/*<WebAppsDropdown />*/}
 
                             {/* MyCartDropdwon */}
-                            <MyCartDropdown />
+                            {/*<MyCartDropdown />*/}
 
                             {/* FullScreenDropdown */}
                             <FullScreenDropdown />
@@ -153,7 +152,7 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }: any) => {
                             />
 
                             {/* NotificationDropdown */}
-                            <NotificationDropdown />
+                            {/*<NotificationDropdown />*/}
 
                             {/* ProfileDropdown */}
                             <ProfileDropdown />
