@@ -54,7 +54,7 @@ const Navdata = () => {
         },
         {
             id: "dashboard",
-            label: "Dashboards",
+            label: "Dashboard",
             icon: <FeatherIcon icon="home" className="icon-dual" />,
             link: "/dashboard",
             stateVariables: isDashboard,
