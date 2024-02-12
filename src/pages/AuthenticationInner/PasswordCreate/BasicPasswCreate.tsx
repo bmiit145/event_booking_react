@@ -10,7 +10,7 @@ import * as Yup from 'yup';
 
 const BasicPasswCreate = () => {
 
-    document.title = "Create New Password | Velzon - React Admin & Dashboard Template";
+    document.title = "Create New Password | Satnam Decor And Event";
 
     const [passwordShow, setPasswordShow] = useState<boolean>(false);
     const [confrimPasswordShow, setConfrimPasswordShow] = useState<boolean>(false);    

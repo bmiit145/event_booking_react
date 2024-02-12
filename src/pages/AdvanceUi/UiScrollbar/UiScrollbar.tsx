@@ -17,7 +17,7 @@ import avatar8 from "../../../assets/images/users/avatar-8.jpg";
 
 
 const UiScrollbar = () => {
-    document.title = "Scrollbar | Velzon - React Admin & Dashboard Template";
+    document.title = "Scrollbar | Satnam Decor And Event";
     return (
         <React.Fragment>
             <div className="page-content">

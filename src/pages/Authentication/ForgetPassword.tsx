@@ -53,7 +53,7 @@ const ForgetPasswordPage = (props: any) => {
   } = useSelector(selectLayoutProperties);
 
 
-  document.title = "Reset Password | Velzon - React Admin & Dashboard Template";
+  document.title = "Reset Password | Satnam Decor And Event";
 
   return (
     <ParticlesAuth>

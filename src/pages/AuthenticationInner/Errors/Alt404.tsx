@@ -4,7 +4,7 @@ import { Card, CardBody, Col, Container, Row } from 'reactstrap';
 
 
 const Alt404 = () => {
-    document.title = "404 Error Alt | Velzon - React Admin & Dashboard Template";
+    document.title = "404 Error Alt | Satnam Decor And Event";
     return (
         <React.Fragment>
             <div className="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">

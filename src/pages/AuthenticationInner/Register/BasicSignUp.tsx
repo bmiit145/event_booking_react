@@ -11,7 +11,7 @@
 // import * as Yup from 'yup';
 
 // const BasicSignUp = () => {
-//     document.title = "Basic SignUp | Velzon - React Admin & Dashboard Template";
+//     document.title = "Basic SignUp | Satnam Decor And Event";
 
 //     const [passwordShow, setPasswordShow] = useState<boolean>(false);
 
@@ -188,7 +188,7 @@ import ParticlesAuth from "../ParticlesAuth";
 import logoLight from "../../../assets/images/logo-light.png";
 
 const BasicSignUp = () => {
-    document.title = "Basic SignUp | Velzon - React Admin & Dashboard Template";
+    document.title = "Basic SignUp | Satnam Decor And Event";
 
     const [passwordShow, setPasswordShow] = useState<boolean>(false);
 

@@ -19,7 +19,7 @@ AOS.init({
 
 
 const UiAnimation = () => {
-    document.title="Animation | Velzon - React Admin & Dashboard Template";
+    document.title="Animation | Satnam Decor And Event";
     return (
         <React.Fragment>
             <div className="page-content">

@@ -9,7 +9,7 @@ import logoLight from "../../../assets/images/logo-light.png";
 
 const BasicTwosVerify = () => {
 
-    document.title = "Two Step Verification | Velzon - React Admin & Dashboard Template";
+    document.title = "Two Step Verification | Satnam Decor And Event";
 
     const getInputElement = (index: number): HTMLInputElement => {
         return document.getElementById('digit' + index + '-input') as HTMLInputElement;

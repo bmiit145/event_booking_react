@@ -25,7 +25,7 @@ const BasicLockScreen = () => {
             // console.log(values);
         }
     });
-    document.title="Lock Screen | Velzon - React Admin & Dashboard Template";
+    document.title="Lock Screen | Satnam Decor And Event";
     return (
         <React.Fragment>
             <div className="auth-page-content">

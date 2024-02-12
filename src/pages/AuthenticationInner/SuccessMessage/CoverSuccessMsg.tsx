@@ -6,7 +6,7 @@ import AuthSlider from '../authCarousel';
 
 
 const CoverSuccessMsg = () => {
-    document.title="Success Message | Velzon - React Admin & Dashboard Template";
+    document.title="Success Message | Satnam Decor And Event";
     return (
         <React.Fragment>
             <div className="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">

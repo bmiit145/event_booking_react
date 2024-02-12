@@ -26,7 +26,7 @@ const CoverSignIn = () => {
             console.log("values", values)
         }
     });
-    document.title="Cover SignIn | Velzon - React Admin & Dashboard Template";
+    document.title="Cover SignIn | Satnam Decor And Event";
     return (
         <React.Fragment>
             <div className="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
