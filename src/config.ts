@@ -28,7 +28,7 @@ const config: Config = {
     APP_ID: "",
   },
   api: {
-    API_URL: "https://api-node.themesbrand.website",
+    API_URL: "https://satnam-backend.vercel.app/",
   },
 };
 

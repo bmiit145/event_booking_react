@@ -37,12 +37,13 @@ export const loginUser = (user : any, history : any) => async (dispatch : any) =
         var finallogin : any = JSON.stringify(data);
         finallogin = JSON.parse(finallogin)
         data = finallogin.data;
-        if (finallogin.status === "success") {
+        if (finallogin.status === 200) {
           dispatch(loginSuccess(data));
           history('/dashboard')
         } 
         else {
           dispatch(apiError(finallogin));
+          // history('/dashboard')
         }
       } else {
         dispatch(loginSuccess(data));

@@ -4,7 +4,7 @@ import BreadCrumb from "../../Components/Common/BreadCrumb";
 import Widget from "./Widgets";
 
 const DashboardEcommerce = () => {
-  document.title = "Dashboard | Velzon - React Admin & Dashboard Template";
+  document.title = "Dashboard | Satnam Decor and Events";
 
   const [rightColumn, setRightColumn] = useState(true);
   const toggleRightColumn = () => {

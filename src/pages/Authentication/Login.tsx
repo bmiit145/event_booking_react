@@ -69,19 +69,6 @@ const Login = (props: any) => {
         }
     });
 
-    const signIn = (type: any) => {
-        dispatch(socialLogin(type, props.router.navigate));
-    };
-
-    //handleTwitterLoginResponse
-    // const twitterResponse = e => {}
-
-    //for facebook and google authentication
-    const socialResponse = (type: any) => {
-        signIn(type);
-    };
-
-
     useEffect(() => {
         if (errorMsg) {
             setTimeout(() => {
@@ -90,6 +77,13 @@ const Login = (props: any) => {
             }, 3000);
         }
     }, [dispatch, errorMsg]);
+
+    useEffect(() => {
+    // if found user logged in , redirect to dashboard
+    if (sessionStorage.getItem("authUser")) {
+        props.router.navigate("/dashboard");
+    }
+    }, []);
 
     document.title = "Login | Satnam Decor & Event";
     return (

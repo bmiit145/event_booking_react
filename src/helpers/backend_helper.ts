@@ -5,7 +5,7 @@ import * as url from "./url_helper";
 
 const api = new APIClient();
 const api_url = "https://satnam-backend.vercel.app/event"
-//const api_url = "http://localhost:4001/event/"
+// const api_url = "http://localhost:4001/event/"
 
 // Gets the logged in user data from local session
 export const getLoggedInUser = () => {
