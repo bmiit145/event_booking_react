@@ -2,6 +2,7 @@ import axios from "axios";
 import { APIClient } from "./api_helper";
 
 import * as url from "./url_helper";
+import {toast} from "react-toastify";
 
 const api = new APIClient();
 const api_url = "https://satnam-backend.vercel.app/event"
@@ -86,8 +87,10 @@ export const getUpCommingEvent = () => api.get(api_url + '/upcommingevents');
 //export const addNewEvent = (event : any) => api.create(url.ADD_NEW_EVENT, event);
 export const addNewEvent = (event : any) => api.create(api_url + '/add', event).then((response) => {
   console.log(response);
+    return response;
 }).catch((error) => {
   console.log(error);
+return error;
 });
 //export const addNewEvent = (event : any) => api.create('https://satnam-backend.vercel.app/event/add', event);
 

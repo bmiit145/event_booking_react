@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Col, Container, Form, FormFeedback, Input, Label, Row} from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import Flatpickr from "react-flatpickr";
@@ -12,6 +12,11 @@ import {
 import PropTypes from "prop-types";
 import {useDispatch} from "react-redux";
 
+//toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const DashboardEcommerce = () => {
     const dispatch: any = useDispatch();
     const [event, setEvent] = useState<any>({});
@@ -21,6 +26,7 @@ const DashboardEcommerce = () => {
     const toggle = () => {
         setEvent(null);
     };
+
 
 // events validation
     const validation: any = useFormik({
@@ -64,7 +70,12 @@ const DashboardEcommerce = () => {
                 description: values["description"],
             };
             // save new event
-            dispatch(onAddNewEvent(newEvent));
+            const res: any = dispatch(onAddNewEvent(newEvent));
+            if (res) {
+                toast.success("Event added successfully", defaultOptions);
+            } else {
+                toast.error("Something Wents Wrong !", defaultOptions);
+            }
             validation.resetForm();
 
 
@@ -74,10 +85,21 @@ const DashboardEcommerce = () => {
         },
     });
 
+        // set up toast message for default properties like postion, autoClose etc
+        const defaultOptions : any = {
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        };
+
 
     return (
         <React.Fragment>
             <div className="page-content">
+                <ToastContainer />
                 <Container fluid>
                     <BreadCrumb title="Dashboard" pageTitle="Dashboards"/>
                     <Row>
@@ -88,6 +110,7 @@ const DashboardEcommerce = () => {
                                       onSubmit={(e) => {
                                           e.preventDefault();
                                           validation.handleSubmit();
+
                                           return false;
                                       }}
                                 >
